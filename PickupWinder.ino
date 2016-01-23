@@ -45,7 +45,8 @@ void loop() {
   else { speed = potVal*3.125; }
 
   // set the motor speed
-  smc.write(0x85);  // motor forward command
+  //smc.write(0x85);  // motor forward command (this is not the command we're looking for)
+  smc.write(0x86);  // motor reverse command
   smc.write(speed & 0x1F);
   smc.write(speed >> 5);
 
